@@ -1,0 +1,32 @@
+<h2>History</h2>
+
+<table class="table" *ngIf="operations">
+    <tr>
+        <th>Account name :</th>
+        <td>{{client.nom}}</td> 
+    </tr>
+    <tr>
+        <th>Amount :</th>
+        <td>{{client.compte.solde}}€</td>
+    </tr>
+</table>
+
+<br>
+
+<table *ngIf="operations" class="table" >
+        <tr>
+            <th>#</th>
+            <th>Amount</th> 
+            <th>Type Operation</th>
+            <th>Date Operation</th>
+        </tr>
+        <tr *ngFor="let operation of operations; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{operation.montant}} €</td>
+            <td *ngIf="operation.type_op === 'V'">Deposit</td>
+            <td *ngIf="operation.type_op === 'R'">Withdrawal</td>
+            <td>{{operation.dateOperation | date:'medium'}}</td>
+        </tr>
+</table>
+
+

@@ -1,0 +1,29 @@
+<h2>Account client</h2>
+
+
+
+<table class="pure-table-striped"  *ngIf="client">
+        <tr>
+            <th>Account Name :</th>
+            <td> {{client.nom}}</td>
+        </tr>
+        <tr>
+            <th>Email :</th>
+            <td> {{client.email}}</td>
+        </tr>
+        <tr>
+            <th>Account number :</th>
+            <td> {{client.compte.codeCompte}}</td>
+        </tr>
+        <tr>
+            <th>Amount :</th>
+            <td> {{client.compte.solde}} €</td>
+        </tr>
+        <tr>
+            <th>authorized overdraft :</th>
+            <td> {{client.compte.decouvert}} €</td>
+        </tr>
+
+</table>
+
+

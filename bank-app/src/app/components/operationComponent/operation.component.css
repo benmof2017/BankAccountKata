@@ -1,0 +1,28 @@
+table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.table_minima{
+    width: 40%;
+}
+
+
+th, td {
+  padding: 0.25rem;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+tbody tr:nth-child(odd) {
+  background: #eee;
+}
+
+.row {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 80%;
+}
