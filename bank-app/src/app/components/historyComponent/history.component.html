@@ -1,15 +1,21 @@
-<h2>History</h2>
+<h2 class="row">History</h2>
 
 <table class="table" *ngIf="operations">
     <tr>
         <th>Account name :</th>
-        <td>{{client.nom}}</td> 
+        <td>{{client.name}}</td> 
     </tr>
     <tr>
         <th>Amount :</th>
-        <td>{{client.compte.solde}}€</td>
+        <td>{{client.amount}}€</td>
     </tr>
 </table>
+
+<br>
+
+<div class="row">
+    <button type="submit" class="btn btn-primary" (click)="deleteAllOperation()">Delete All Operations</button>
+</div>
 
 <br>
 
@@ -22,11 +28,13 @@
         </tr>
         <tr *ngFor="let operation of operations; let i = index">
             <td>{{i+1}}</td>
-            <td>{{operation.montant}} €</td>
-            <td *ngIf="operation.type_op === 'V'">Deposit</td>
-            <td *ngIf="operation.type_op === 'R'">Withdrawal</td>
+            <td>{{operation.amount}} €</td>
+            <td *ngIf="operation.type_op === 'D'">Deposit</td>
+            <td *ngIf="operation.type_op === 'W'">Withdrawal</td>
             <td>{{operation.dateOperation | date:'medium'}}</td>
         </tr>
 </table>
+
+
 
 

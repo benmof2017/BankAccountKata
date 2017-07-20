@@ -4,8 +4,6 @@ import { ClientComponent } from "app/components/clientComponent/client.component
 import { OperationComponent } from "app/components/operationComponent/operation.component";
 import { HistoryComponent } from "app/components/historyComponent/history.component";
 
-
-
  
 const routes: Routes = [
   { path: '', redirectTo: '/client', pathMatch: 'full' },

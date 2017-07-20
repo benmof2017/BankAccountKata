@@ -1,22 +1,23 @@
-import { Compte } from "app/models/compte";
 
 export class Client {
 
     code: number;
-    nom: string;
+    name: string;
     email: string;
     password: string;
-    compte: Compte;
+    amount: number;
 
     constructor(code : number = 0, 
-                nom:string = "",
+                name:string = "",
                 email: string = "",
                 password: string = "",
-                compte: Compte = new Compte()){ 
+                amount: number = 1000
+                ){ 
         this.code = code;
-        this.nom = nom;
-        this.email = email;;
+        this.name = name;
+        this.email = email;
         this.password = password;
-        this.compte = compte
+        this.amount = amount;
+
      } 
 } 

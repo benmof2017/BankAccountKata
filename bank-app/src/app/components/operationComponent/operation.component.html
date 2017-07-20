@@ -1,33 +1,29 @@
-<h2>Operation</h2>
+<h2 class="row">Operation</h2>
 
 <div class="row">
 
 <table class="table_minima" *ngIf="client">
     <tr>
         <th>Account name :</th>
-        <td>{{client.nom}}</td> 
+        <td>{{client.name}}</td> 
     </tr>
     <tr>
         <th>Amount :</th>
-        <td>{{client.compte.solde}}€</td>
-    </tr>
-    <tr>
-        <th>authorized overdraft :</th>
-        <td> {{client.compte.decouvert}} €</td>
+        <td>{{client.amount}}€</td>
     </tr>
 </table>
 
 <br>
 
-    <div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="col-sm-4 col-lg-4 col-md-4" *ngIf="client">
       <form>
         <div class="form-group">
-          <label for="nom">Amount :</label>
-          <input type="number" class="form-control" id="nom" placeholder="Amount"  step="10" min="10" [(ngModel)]="operation.montant" name="inscMontant">
+          <label for="amount">Amount :</label>
+          <input type="number" class="form-control" id="nom"  step="10" min="10" [(ngModel)]="amount" name="inscAmount">
         </div>
 
-        <button type="submit" class="btn btn btn-default" (click)="toDoDeposit()">Deposit</button>
-        <button type="submit" class="btn btn btn-default" (click)="toDoWithdrawal()">Withdrawal</button>
+        <button type="submit" class="btn btn-primary" (click)="toDoDeposit()">Deposit</button>
+        <button type="submit" class="btn btn-primary" (click)="toDoWithdrawal()">Withdrawal</button>
         
 
         <div class="bg-success">{{validation}}</div>

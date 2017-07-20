@@ -6,7 +6,6 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-import { Compte } from "app/models/compte";
 import { Operation } from "app/models/operation";
 import { AppUrlConfig } from "app/app.url-config";
 
@@ -22,15 +21,6 @@ export class BankService {
 
     constructor(private _http: Http) {
         // _http injecté ici servira a appeler des WS REST
-    }
-
-    public consultCompte(codeCpte: number): Observable<Compte> {
-
-        let urlWS: string = this.urlWebService_begin + "compte/" + codeCpte;
-        return this._http.get(urlWS)
-            .map(response => response.json())
-            .catch(e => Observable.throw("error : " + e));
-
     }
 
 
@@ -56,12 +46,21 @@ export class BankService {
     }
 
 
-    //liste toutes les operations du compte id : codeCpte
-    public listOperation(codeCpte:string): Observable<Operation[]> {
-        //return Observable.of(this.listeProduit);
+    //list all  operations
+    public listOperation(): Observable<Operation[]> {
 
         let urlWS: string = this.urlWebService_begin + "operations";
-        return this._http.get(urlWS + "/" + codeCpte)
+        return this._http.get(urlWS)
+            .map(response => response.json())
+            .catch(e => Observable.throw("error : " + e));
+
+    }
+
+    //delete all Operations
+    public deleteAllOperations(): Observable<Boolean> {
+
+        let urlWS: string = this.urlWebService_begin + "operations";
+        return this._http.delete(urlWS)
             .map(response => response.json())
             .catch(e => Observable.throw("error : " + e));
 

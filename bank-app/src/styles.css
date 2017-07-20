@@ -2,3 +2,11 @@
 body {
   font: normal medium/1.4 sans-serif;
 }
+
+.row {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 80%;
+}
