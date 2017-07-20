@@ -28,6 +28,8 @@ In order to check my operations
 As a bank client
 I want to see the history (operation, date, amount, balance)  of my operations
 
+Other version with Inscription/Connection/Deconnection Client at :  https://github.com/benssj5/BankAccountKata
+
 ####################################
 
 developpé avec Spring Boot, Hibernate/JPA, MySql, Spring data, Spring MVC pour les WebService Rest
