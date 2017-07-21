@@ -51,7 +51,12 @@ export class HistoryComponent implements OnInit{
     
     //delete all operations
     this.bankService.deleteAllOperations()
-        .subscribe( result => {}, 
+        .subscribe( result => {
+                      //redirection client page
+                      let link=['/client'];
+                      this._router.navigate(link);
+
+        }, 
                     e => console.log(e.message));
 
   }
